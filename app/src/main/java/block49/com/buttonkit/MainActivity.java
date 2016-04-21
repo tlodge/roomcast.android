@@ -10,9 +10,11 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.PermissionRequest;
 import android.webkit.WebViewClient;
+import android.widget.ScrollView;
 
 public class MainActivity extends Activity {
     private WebView myWebView;
+
     private String TAG = "MainActivity";
 
     @Override
@@ -27,6 +29,7 @@ public class MainActivity extends Activity {
         webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         myWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         myWebView.clearCache(true);
+
         myWebView.setWebChromeClient(new WebChromeClient() {
 
             @Override
