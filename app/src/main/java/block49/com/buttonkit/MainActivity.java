@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.CookieManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.PermissionRequest;
 import android.webkit.WebViewClient;
-import android.widget.ScrollView;
+
 
 public class MainActivity extends Activity {
     private WebView myWebView;
@@ -45,6 +46,10 @@ public class MainActivity extends Activity {
 
         });
         myWebView.setWebViewClient(new WebViewClient());
+
+        CookieManager cookieManager = CookieManager.getInstance();
+        cookieManager.setAcceptThirdPartyCookies(myWebView, true);
+
         myWebView.loadUrl("http://wharfside.buttonkit.com");
     }
 
